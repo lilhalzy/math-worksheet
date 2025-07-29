@@ -160,8 +160,12 @@ const App = () => {
           </button>
         </div>
       </div>
+      <footer className="text-center text-xs mt-4 text-gray-500">
+        copyright: <a href="https://www.mathinenglish.com" target="_blank" rel="noopener noreferrer">www.mathinenglish.com</a>
+      </footer>
     </div>
   )
 }
 
 export default App
+
