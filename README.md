@@ -14,6 +14,3 @@ An interactive math worksheet built with **React** and **Tailwind CSS**, designe
 - ✅ Mobile-first responsive layout
 - ✅ Styled with Tailwind CSS
 - ✅ Clean component-based React structure
-
-## Live Demo
-[V2](https://mathwsheet.netlify.app){:target="_blank"} 
