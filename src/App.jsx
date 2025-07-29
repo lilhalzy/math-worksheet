@@ -3,6 +3,7 @@ import Header from './components/Header';
 import QuestionList from './components/QuestionList';
 import Buttons from './components/Buttons';
 import Notifications from './components/Notifications';
+import Footer from './components/Footer';
 
 const App = () => {
   const questions = [
@@ -18,7 +19,7 @@ const App = () => {
     { questions: "165 rounded off to the nearest 10 is..", options: ["160", "170", "150"], answer: "170" },
     { questions: "445 rounded off to the nearest 10 is..", options: ["450", "440", "500"], answer: "450" },
     { questions: "999 rounded off to the nearest 10 is..", options: ["990", "1,000", "909"], answer: "1,000" },
-  ];
+  ]
 
   const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(null));
   const [score, setScore] = useState(null)
@@ -26,11 +27,11 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState('')
 
   const showScoreMessage = () => {
-    if (score === null) return null;
-    const numericScore = parseInt(score);
-    if (numericScore < 5) return `You're finished bruv... RIP ${name}`;
-    return `${name}, you are my g *smirks*`;
-  };
+    if (score === null) return null
+    const numericScore = parseInt(score)
+    if (numericScore < 5) return `You're finished bruv... RIP ${name}`
+    return `${name}, you are my g *smirks*`
+  }
 
   return (
     <div className="max-w-4xl mx-auto font-serif">
@@ -56,7 +57,7 @@ const App = () => {
             setErrorMessage={setErrorMessage}
           />
         </main>
-
+      <Footer/>
     </div>
   );
 };
