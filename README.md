@@ -10,7 +10,10 @@ An interactive math worksheet built with **React** and **Tailwind CSS**, designe
 - ✅ Styled with Tailwind CSS
 - ✅ Deployable to Netlify, Vercel, or GitHub 
 
-### V2
+### V2 
 - ✅ Mobile-first responsive layout
 - ✅ Styled with Tailwind CSS
 - ✅ Clean component-based React structure
+
+## Live Demo
+[V2](https://mathwsheet.netlify.app)
