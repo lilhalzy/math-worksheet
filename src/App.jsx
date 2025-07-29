@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import QuestionList from './components/QuestionList';
+import Buttons from './components/Buttons';
+import Notifications from './components/Notifications';
 
 const App = () => {
   const questions = [
@@ -19,11 +21,42 @@ const App = () => {
   ];
 
   const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(null));
+  const [score, setScore] = useState(null)
+  const [name, setName] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const showScoreMessage = () => {
+    if (score === null) return null;
+    const numericScore = parseInt(score);
+    if (numericScore < 5) return `You're finished bruv... RIP ${name}`;
+    return `${name}, you are my g *smirks*`;
+  };
 
   return (
-    <div className="max-w-4xl mx-auto p-3 font-serif pt-40">
-      <Header />
-      <QuestionList questions={questions} userAnswers={userAnswers} setUserAnswers={setUserAnswers} />
+    <div className="max-w-4xl mx-auto font-serif">
+      <Header 
+        name={name}
+        setName={setName}
+        score={score}
+      />
+        <main className="mt-40 px-4 md:px-10">
+          <QuestionList
+            questions={questions}
+            userAnswers={userAnswers}
+            setUserAnswers={setUserAnswers}
+          />
+          <Notifications message={errorMessage || showScoreMessage()} />
+          <Buttons
+            name={name}
+            userAnswers={userAnswers}
+            questions={questions}
+            setScore={setScore}
+            setUserAnswers={setUserAnswers}
+            setName={setName}
+            setErrorMessage={setErrorMessage}
+          />
+        </main>
+
     </div>
   );
 };
